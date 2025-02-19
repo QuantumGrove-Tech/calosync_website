@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.framer-19z354v-container {
+  width: 100%;
+  background: #fff;
+  padding: 4rem 0;
+}
+
+.framer-DHsDL {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.framer-1uztc9t {
+  position: relative;
+}
+
+.framer-y9xtt6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.framer-1wr03mz {
+  text-align: center;
+}
+
+.framer-text {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+.framer-device-frame {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  margin: 0 auto;
+}
+
+.framer-device-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.framer-image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.framer-side-images {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.framer-prev-image,
+.framer-next-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+.framer-prev-image {
+  left: -200px;
+}
+
+.framer-next-image {
+  right: -200px;
+}
+
+.framer-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.framer-button-prev,
+.framer-button-next {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}  */
