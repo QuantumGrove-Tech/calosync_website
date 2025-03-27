@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
 const features = [
@@ -62,70 +62,73 @@ const features = [
 
 const Features = () => {
   return (
-    <div id="features" className="min-h-screen flex items-center bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Why Choose CaloSync?
-            <span className="block text-green-600 mt-2">Smarter Tracking, Better Results!</span>
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
-            CaloSync isn&apos;t just a calorie counter—it&apos;s your personal nutrition coach powered by AI. Here&apos;s what makes it the best:
-          </p>
-        </motion.div>
+    <AnimatePresence>
+      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white">
+              Why Choose CaloSync?
+              <span className="block text-primary-600 dark:text-primary-900 mt-2">Smarter Tracking, Better Results!</span>
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
+              CaloSync isn&apos;t just a calorie counter—it&apos;s your personal nutrition coach powered by AI. Here&apos;s what makes it the best:
+            </p>
+          </motion.div>
 
-        <div className="mt-16 lg:mt-20">
-          <div className="grid grid-cols-1 gap-8 sm:gap-12 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.name}
-                className="relative"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
-                      {feature.icon}
+          <div className="mt-12 sm:mt-16 lg:mt-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.name}
+                  className="bg-white dark:bg-gray-800 rounded-xl p-6 sm:p-8 hover:bg-primary-500 dark:hover:bg-primary-500 group transition-all duration-200"
+                  initial={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-primary-500 dark:bg-primary-600 group-hover:bg-white text-white group-hover:text-primary-500 transition-colors duration-200">
+                        {feature.icon}
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white group-hover:text-white mb-2">
+                        {feature.name}
+                      </h3>
+                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 group-hover:text-white/90">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
-                  <h3 className="text-lg font-medium text-gray-900">{feature.name}</h3>
-                </div>
-                <p className="mt-3 text-base text-gray-500 ml-16">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <motion.div 
-          className="mt-16 lg:mt-20 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">
-            Start tracking smarter today! Download CaloSync now and hit your goals faster.
-          </h3>
-          <Link
-            href="https://play.google.com/store"
-            className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-semibold rounded-lg text-white bg-green-600 hover:bg-green-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+          <motion.div 
+            className="mt-12 sm:mt-16 lg:mt-20 text-center"
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            Download Now
-          </Link>
-        </motion.div>
-      </div>
-    </div>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
+              Start tracking smarter today! Download CaloSync now and hit your goals faster.
+            </h3>
+            <Link
+              href="https://play.google.com/store"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Download Now
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </AnimatePresence>
   )
 }
 

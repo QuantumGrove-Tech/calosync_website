@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -36,92 +36,94 @@ const benefits = [
 
 const DownloadCTA = () => {
   return (
-    <div className="relative h-[95vh] flex items-center bg-gradient-to-b from-green-50 to-white">
-      <div className="w-[70%] mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Text Content */}
-          <motion.div 
-            className="w-full lg:w-1/2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl mb-6">
-              Ready to Transform
-              <span className="block text-green-600 mt-2">Your Nutrition Journey?</span>
-            </h2>
-            
-            <p className="text-xl text-gray-600 mb-8">
-              Join thousands of users who have already achieved their fitness goals with CaloSync. Start your journey today!
-            </p>
-
-            <div className="grid grid-cols-1 gap-6 mb-8">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  className="flex items-start space-x-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600">
-                      {benefit.icon}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+    <AnimatePresence>
+      <section className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-900 relative z-0">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            {/* Text Content */}
+            <motion.div 
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              <Link
-                href="https://play.google.com/store"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg text-white bg-green-600 hover:bg-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white">
+                Ready to Transform
+                <span className="block text-primary-600 dark:text-primary-900 mt-2">Your Nutrition Journey?</span>
+              </h2>
+              
+              <p className="mt-4 text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
+                Join thousands of users who have already achieved their fitness goals with CaloSync. Start your journey today!
+              </p>
+
+              <div className="grid grid-cols-1 gap-4 sm:gap-6 mt-8 sm:mt-10">
+                {benefits.map((benefit, index) => (
+                  <motion.div
+                    key={benefit.title}
+                    className="flex items-start space-x-4"
+                    initial={{ opacity: 1, x: 0 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-900">
+                        {benefit.icon}
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
+                        {benefit.title}
+                      </h3>
+                      <p className="mt-1 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
-                Download Now - It&apos;s Free!
-              </Link>
-              <div className="flex items-center space-x-2 text-gray-600">
-                <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                <span>4.8/5 on Play Store</span>
+                <Link
+                  href="https://play.google.com/store"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  Download Now - It&apos;s Free!
+                </Link>
+                <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="text-sm sm:text-base">4.8/5 on Play Store</span>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* App Preview */}
+            <motion.div 
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="relative w-full max-w-md mx-auto aspect-[3/4]">
+                <Image
+                  src="/images/app-mockup.png"
+                  alt="CaloSync App Features"
+                  fill
+                  className="object-contain dark:brightness-90"
+                  priority
+                />
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* App Preview */}
-          <motion.div 
-            className="lg:w-[45%] relative"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="relative w-full aspect-[3/4] max-w-md mx-auto">
-              <Image
-                src="/images/app-mockup.png"
-                alt="CaloSync App Features"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </motion.div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </AnimatePresence>
   )
 }
 

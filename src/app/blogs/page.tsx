@@ -182,27 +182,28 @@ const BlogPage = () => {
   const recentPosts = filteredPosts.filter(post => !post.featured)
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-green-50 to-white py-16">
-        <div className="w-[70%] mx-auto text-center">
+      <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
+            className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
               CaloSync Blog
-              <span className="block text-green-600 mt-2">Nutrition & Wellness Insights</span>
+              <span className="block text-primary-600 dark:text-primary-900 mt-2">Nutrition & Wellness Insights</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Expert tips, success stories, and the latest in nutrition science to help you achieve your fitness goals.
             </p>
           </motion.div>
 
           {/* Categories */}
           <motion.div
-            className="flex flex-wrap justify-center gap-3 mt-8"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 sm:mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -211,10 +212,10 @@ const BlogPage = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   category === selectedCategory
-                    ? 'bg-green-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-primary-600 dark:bg-primary-500 text-white'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                 }`}
               >
                 {category}
@@ -224,7 +225,7 @@ const BlogPage = () => {
         </div>
       </div>
 
-      <div className="w-[70%] mx-auto py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8 sm:py-12 lg:py-16">
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
           <motion.div
@@ -232,54 +233,53 @@ const BlogPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Articles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Featured Articles</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {featuredPosts.map((post, index) => (
                 <motion.article
                   key={post.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-800/30 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800/50 transition-shadow"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
                 >
-                  <div className="relative h-48">
+                  <div className="relative aspect-video sm:aspect-[16/10]">
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
-                      className="object-cover"
+                      className="object-cover dark:brightness-90"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="inline-block px-3 py-1 rounded-full bg-white/90 text-green-600 text-sm font-medium">
+                      <span className="inline-block px-3 py-1 rounded-full bg-white/90 dark:bg-gray-900/90 text-primary-600 dark:text-white text-sm font-medium">
                         {post.category}
                       </span>
                     </div>
                   </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      <Link href={`/blogs/${post.id}`} className="hover:text-green-600 transition-colors">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
+                      <Link href={`/blogs/${post.id}`} className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">{post.excerpt}</p>
                     
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <div className="relative w-8 h-8 rounded-full overflow-hidden">
+                        <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden">
                           <Image
                             src={post.author.avatar}
                             alt={post.author.name}
                             fill
-                            className="object-cover"
+                            className="object-cover dark:brightness-90"
                           />
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-gray-900">{post.author.name}</p>
-                          <p className="text-xs text-gray-500">{post.date}</p>
+                          <p className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">{post.author.name}</p>
+                          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{post.date}</p>
                         </div>
                       </div>
-                      <span className="text-sm text-gray-500">{post.readTime}</span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">{post.readTime}</span>
                     </div>
                   </div>
                 </motion.article>
@@ -291,44 +291,44 @@ const BlogPage = () => {
         {/* Recent Posts */}
         {recentPosts.length > 0 && (
           <motion.div
-            className="mt-16"
+            className="mt-12 sm:mt-16 lg:mt-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
               {selectedCategory === 'All Posts' ? 'Recent Articles' : selectedCategory}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {recentPosts.map((post, index) => (
                 <motion.article
                   key={post.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-800/30 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800/50 transition-shadow"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.7 }}
                 >
-                  <div className="relative h-48">
+                  <div className="relative aspect-video">
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
-                      className="object-cover"
+                      className="object-cover dark:brightness-90"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="inline-block px-3 py-1 rounded-full bg-white/90 text-green-600 text-sm font-medium">
+                      <span className="inline-block px-3 py-1 rounded-full bg-white/90 dark:bg-gray-900/90 text-primary-600 dark:text-primary-400 text-sm font-medium">
                         {post.category}
                       </span>
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
-                      <Link href={`/blogs/${post.id}`} className="hover:text-green-600 transition-colors">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      <Link href={`/blogs/${post.id}`} className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base mb-4 line-clamp-2">{post.excerpt}</p>
                     
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
@@ -337,15 +337,15 @@ const BlogPage = () => {
                             src={post.author.avatar}
                             alt={post.author.name}
                             fill
-                            className="object-cover"
+                            className="object-cover dark:brightness-90"
                           />
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-gray-900">{post.author.name}</p>
-                          <p className="text-xs text-gray-500">{post.date}</p>
+                          <p className="text-sm font-medium text-gray-900 dark:text-white">{post.author.name}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">{post.date}</p>
                         </div>
                       </div>
-                      <span className="text-sm text-gray-500">{post.readTime}</span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">{post.readTime}</span>
                     </div>
                   </div>
                 </motion.article>
@@ -357,12 +357,12 @@ const BlogPage = () => {
         {/* No Posts Message */}
         {filteredPosts.length === 0 && (
           <motion.div
-            className="text-center py-16"
+            className="text-center py-12 sm:py-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl text-gray-600">
+            <h3 className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
               No posts found in this category yet. Check back soon!
             </h3>
           </motion.div>
@@ -370,26 +370,26 @@ const BlogPage = () => {
 
         {/* Newsletter */}
         <motion.div
-          className="mt-16 bg-green-50 rounded-2xl p-8 text-center"
+          className="mt-12 sm:mt-16 lg:mt-20 bg-primary-50 dark:bg-primary-900/20 rounded-2xl p-6 sm:p-8 lg:p-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Stay Updated with CaloSync
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6">
             Get the latest nutrition tips and wellness insights delivered to your inbox weekly.
           </p>
-          <form className="max-w-md mx-auto flex gap-4">
+          <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3 sm:gap-4">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
+              className="px-6 py-3 bg-primary-600 dark:bg-primary-500 text-white font-medium rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors whitespace-nowrap"
             >
               Subscribe
             </button>

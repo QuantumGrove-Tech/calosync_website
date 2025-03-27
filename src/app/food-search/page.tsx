@@ -41,23 +41,23 @@ const FoodCard = ({ food }: { food: FoodItem }) => {
 
   return (
     <motion.div
-      className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-3 sm:p-4 cursor-pointer"
+      className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md dark:shadow-gray-800/30 dark:hover:shadow-gray-800/50 transition-shadow p-3 sm:p-4 cursor-pointer"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={() => router.push(`/food/${food.bar_code}`)}
     >
-      <div className="aspect-square relative mb-3 sm:mb-4 bg-gray-100 rounded-lg overflow-hidden">
+      <div className="aspect-square relative mb-3 sm:mb-4 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
         <Image
           src="/images/food-placeholder.png"
           alt={food.name}
           fill
-          className="object-cover"
+          className="object-cover dark:brightness-90"
         />
       </div>
-      <h3 className="font-medium text-gray-900 text-sm sm:text-base line-clamp-2 mb-1 sm:mb-2">
+      <h3 className="font-medium text-gray-900 dark:text-white text-sm sm:text-base line-clamp-2 mb-1 sm:mb-2">
         {food.name}
       </h3>
-      <p className="text-xs sm:text-sm text-gray-500">
+      <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
         {Number(food['energy-kcal_100g'] || 0).toFixed(2)} kcal/100g
       </p>
     </motion.div>
@@ -260,9 +260,9 @@ const FoodSearchPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-green-50 to-white py-8 sm:py-12 md:py-16">
+      <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center"
@@ -270,11 +270,11 @@ const FoodSearchPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
               Food Database
-              <span className="block text-green-600 mt-2">Search & Track Nutrition</span>
+              <span className="block text-primary-600 dark:text-primary-900 mt-2">Search & Track Nutrition</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Access detailed nutritional information for thousands of foods to make informed dietary choices.
             </p>
           </motion.div>
@@ -296,11 +296,11 @@ const FoodSearchPage = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 pr-16 sm:pr-20"
+              className="w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 pr-16 sm:pr-20"
             />
             <button
               onClick={handleSearch}
-              className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12"
+              className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 bg-primary-600 dark:bg-primary-500 text-white rounded-full hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12"
               disabled={isLoading}
             >
               {isLoading ? (
@@ -325,7 +325,7 @@ const FoodSearchPage = () => {
         </motion.div>
 
         {error && (
-          <div className="text-red-500 text-center mb-4">
+          <div className="text-red-500 dark:text-red-400 text-center mb-4">
             {error}
           </div>
         )}
@@ -341,7 +341,7 @@ const FoodSearchPage = () => {
                 exit={{ opacity: 0 }}
                 className="flex justify-center py-8 sm:py-12"
               >
-                <div className="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-green-500"></div>
+                <div className="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-primary-500 dark:border-primary-400"></div>
               </motion.div>
             ) : searchResults.length > 0 ? (
               <motion.div
@@ -362,7 +362,7 @@ const FoodSearchPage = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="text-center text-gray-500 py-8 sm:py-12"
+                className="text-center text-gray-500 dark:text-gray-400 py-8 sm:py-12"
               >
                 No foods found
               </motion.p>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
 const steps = [
@@ -47,76 +47,79 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="relative h-[95vh] flex items-center bg-gray-50">
-      <div className="w-[70%] mx-auto">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Start Your Journey in Just 3 Simple Steps!
-          </h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            CaloSync makes tracking your calories and reaching your fitness goals effortless. Here&apos;s how it works:
-          </p>
-        </motion.div>
+    <AnimatePresence>
+      <section className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.div
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white">
+              Start Your Journey in Just 3 Simple Steps!
+            </h2>
+            <p className="mt-4 text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              CaloSync makes tracking your calories and reaching your fitness goals effortless. Here&apos;s how it works:
+            </p>
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              className="relative"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600">
-                      {step.icon}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.number}
+                className="relative"
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg dark:shadow-gray-800/30 h-full hover:shadow-xl dark:hover:shadow-gray-800/50 transition-shadow duration-200">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
+                    <div className="flex-shrink-0 mb-3 sm:mb-0 sm:mr-4">
+                      <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400">
+                        {step.icon}
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-900 mr-3">
+                        {step.number}
+                      </span>
+                      <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white">
+                        {step.title}
+                      </h3>
                     </div>
                   </div>
-                  <div className="flex items-center">
-                    <span className="text-4xl font-bold text-green-600 mr-2">{step.number}</span>
-                    <h3 className="text-xl font-semibold text-gray-900">{step.title}</h3>
+                  <div className="space-y-2 sm:space-y-3">
+                    {step.description.map((desc, i) => (
+                      <p key={i} className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                        {desc}
+                      </p>
+                    ))}
                   </div>
                 </div>
-                <div className="space-y-4">
-                  {step.description.map((desc, i) => (
-                    <p key={i} className="text-gray-600">
-                      {desc}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
 
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">
-            Ready to take control of your nutrition? Join thousands already using CaloSync!
-          </h3>
-          <Link
-            href="https://play.google.com/store"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+          <motion.div
+            className="text-center mt-8 sm:mt-12 lg:mt-16"
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            Download Now
-          </Link>
-        </motion.div>
-      </div>
-    </div>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+              Ready to take control of your nutrition? Join thousands already using CaloSync!
+            </h3>
+            <Link
+              href="https://play.google.com/store"
+              className="inline-flex items-center justify-center px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-base sm:text-lg font-medium rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Download Now
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </AnimatePresence>
   )
 }
 

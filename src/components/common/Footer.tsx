@@ -47,23 +47,35 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer 
+      className="bg-gradient-to-b to-gray-50 from-white dark:to-gray-800 dark:from-gray-900 border-t border-gray-200 dark:border-gray-800" 
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <Link href="/" className="text-2xl font-bold text-green-600">
-            <Image
-              src="/images/calosync_text_logo.svg"
-              alt="CaloSync"
-              width={140}
-              height={46}
-              priority
-            />
+            <Link href="/" className="text-2xl font-bold text-primary-600 dark:text-primary-400">
+              <Image
+                src="/images/calosync_icon_light.svg"
+                alt="CaloSync"
+                width={140}
+                height={46}
+                priority
+                className="block dark:hidden"
+              />
+              <Image
+                src="/images/calosync_icon_dark.svg"
+                alt="CaloSync"
+                width={140}
+                height={46}
+                priority
+                className="hidden dark:block"
+              />
             </Link>
-            <p className="text-gray-500 text-base">
+            <p className="text-gray-500 dark:text-gray-400 text-base">
               Making nutrition tracking and meal planning simple with AI-powered insights.
             </p>
             {/* <div className="flex space-x-6">
@@ -81,7 +93,7 @@ const Footer = () => {
           </div>
           <div className="mt-12 grid grid-cols-3 gap-8 xl:mt-0 xl:col-span-2">
             <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+              <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">
                 Product
               </h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -89,7 +101,7 @@ const Footer = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
+                      className="text-base text-gray-500 hover:text-primary-600 dark:text-gray-200 dark:hover:text-primary-900 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -98,7 +110,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+              <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">
                 Support
               </h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -106,7 +118,7 @@ const Footer = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
+                      className="text-base text-gray-500 hover:text-primary-600 dark:text-gray-200 dark:hover:text-primary-900 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -115,7 +127,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+              <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-wider uppercase">
                 Company
               </h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -123,7 +135,7 @@ const Footer = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
+                      className="text-base text-gray-500 hover:text-primary-600 dark:text-gray-200 dark:hover:text-primary-900 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -133,8 +145,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-gray-200 pt-8">
-          <p className="text-base text-gray-400 xl:text-center">
+        <div className="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
+          <p className="text-base text-gray-400 dark:text-gray-500 xl:text-center">
             &copy; {new Date().getFullYear()} CalSync. All rights reserved.
           </p>
         </div>

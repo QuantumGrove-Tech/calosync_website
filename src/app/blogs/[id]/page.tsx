@@ -65,21 +65,21 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <p className="text-gray-600">Blog post not found</p>
+      <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
+        <p className="text-gray-600 dark:text-gray-400">Blog post not found</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <div className="relative h-[60vh] bg-gray-900">
         <Image
           src={post.image}
           alt={post.title}
           fill
-          className="object-cover opacity-50"
+          className="object-cover opacity-50 dark:brightness-75"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -89,7 +89,7 @@ const BlogPost = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-green-400 font-medium mb-4">{post.category}</p>
+              <p className="text-primary-400 font-medium mb-4">{post.category}</p>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">{post.title}</h1>
               <div className="flex items-center justify-center space-x-4">
                 <div className="flex items-center space-x-2">
@@ -98,7 +98,7 @@ const BlogPost = () => {
                       src={post.author.avatar}
                       alt={post.author.name}
                       fill
-                      className="object-cover"
+                      className="object-cover dark:brightness-90"
                     />
                   </div>
                   <span>{post.author.name}</span>
@@ -122,25 +122,25 @@ const BlogPost = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <article className="prose prose-lg max-w-none">
+            <article className="prose prose-lg dark:prose-invert max-w-none">
               {post.content.map((section, index) => {
                 switch (section.type) {
                   case 'heading':
                     return (
-                      <h2 key={index} className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+                      <h2 key={index} className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
                         {section.content}
                       </h2>
                     )
                   case 'paragraph':
                     return (
-                      <p key={index} className="text-gray-600 mb-6">
+                      <p key={index} className="text-gray-600 dark:text-gray-300 mb-6">
                         {section.content}
                       </p>
                     )
                   case 'tip':
                     return (
-                      <div key={index} className="bg-green-50 border-l-4 border-green-500 p-4 my-6">
-                        <p className="text-gray-700">
+                      <div key={index} className="bg-primary-50 dark:bg-primary-900/20 border-l-4 border-primary-500 dark:border-primary-400 p-4 my-6">
+                        <p className="text-gray-700 dark:text-gray-300">
                           {section.content}
                         </p>
                       </div>
@@ -156,7 +156,7 @@ const BlogPost = () => {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                  className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-sm"
                 >
                   {tag}
                 </span>
@@ -172,41 +172,41 @@ const BlogPost = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             {/* Author Bio */}
-            <div className="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-800/30 p-6 mb-8">
               <div className="flex items-center space-x-4 mb-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden">
                   <Image
                     src={post.author.avatar}
                     alt={post.author.name}
                     fill
-                    className="object-cover"
+                    className="object-cover dark:brightness-90"
                   />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900">{post.author.name}</h3>
-                  <p className="text-gray-600">{post.author.role}</p>
+                  <h3 className="font-bold text-gray-900 dark:text-white">{post.author.name}</h3>
+                  <p className="text-gray-600 dark:text-gray-400">{post.author.role}</p>
                 </div>
               </div>
-              <p className="text-gray-600">{post.author.bio}</p>
+              <p className="text-gray-600 dark:text-gray-300">{post.author.bio}</p>
             </div>
 
             {/* Newsletter */}
-            <div className="bg-green-50 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                 Subscribe to Our Newsletter
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Get the latest nutrition tips and wellness insights delivered to your inbox.
               </p>
               <form className="space-y-4">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400"
                 />
                 <button
                   type="submit"
-                  className="w-full px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
+                  className="w-full px-4 py-2 bg-primary-600 dark:bg-primary-500 text-white font-medium rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
                 >
                   Subscribe
                 </button>

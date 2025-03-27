@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useParams } from 'next/navigation'
 
 interface DetailedFoodItem {
   name: string;
@@ -29,8 +30,8 @@ interface DetailedFoodItem {
   vitamin_d_100g: number | null;
 }
 
-export default function FoodDetailPage({ params }: { params: { id: string } }) {
-  const unwrappedParams = use(params)
+export default function FoodDetailPage() {
+  const params = useParams()
   const [food, setFood] = useState<DetailedFoodItem | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -38,7 +39,7 @@ export default function FoodDetailPage({ params }: { params: { id: string } }) {
   useEffect(() => {
     const fetchFoodDetails = async () => {
       try {
-        const response = await fetch(`https://api.quantumgrove.tech:8002/SearchFood_Id/${unwrappedParams.id}`, {
+        const response = await fetch(`https://api.quantumgrove.tech:8002/SearchFood_Id/${params.id}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -63,22 +64,24 @@ export default function FoodDetailPage({ params }: { params: { id: string } }) {
       }
     };
 
-    fetchFoodDetails();
-  }, [unwrappedParams.id]);
+    if (params.id) {
+      fetchFoodDetails();
+    }
+  }, [params.id]);
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+      <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 dark:border-primary-400"></div>
       </div>
     );
   }
 
   if (error || !food) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-4">
-        <p className="text-red-500 text-xl mb-4">{error || 'Food not found'}</p>
-        <Link href="/food-search" className="text-green-600 hover:text-green-700">
+      <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center p-4">
+        <p className="text-red-500 dark:text-red-400 text-xl mb-4">{error || 'Food not found'}</p>
+        <Link href="/food-search" className="text-primary-600 dark:text-primary-800 hover:text-primary-700 dark:hover:text-primary-300">
           ← Back to Search
         </Link>
       </div>
@@ -86,61 +89,61 @@ export default function FoodDetailPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-white py-12">
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-12">
       <div className="max-w-4xl mx-auto px-4">
-        <Link href="/food-search" className="text-green-600 hover:text-green-700 mb-8 inline-block">
+        <Link href="/food-search" className="text-primary-600 dark:text-primary-800 hover:text-primary-700 dark:hover:text-primary-300 mb-8 inline-block">
           ← Back to Search
         </Link>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm dark:shadow-gray-800/30 border border-gray-100 dark:border-gray-700 p-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Column - Basic Info */}
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">{food.name}</h1>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{food.name}</h1>
               {food.brand && (
-                <p className="text-gray-600 mb-2">Brand: {food.brand}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-2">Brand: {food.brand}</p>
               )}
               {food.categories && (
-                <p className="text-gray-600 mb-4">Category: {food.categories}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">Category: {food.categories}</p>
               )}
               
-              <div className="aspect-video relative bg-gray-100 rounded-lg overflow-hidden mb-6">
+              <div className="aspect-video relative bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden mb-6">
                 <Image
                   src="/images/food-placeholder.png"
                   alt={food.name}
                   fill
-                  className="object-cover"
+                  className="object-cover dark:brightness-90"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-green-50 rounded-lg p-4">
-                  <p className="text-sm text-gray-600">Energy</p>
-                  <p className="text-xl font-bold text-gray-900">
+                <div className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Energy</p>
+                  <p className="text-xl font-bold text-gray-900 dark:text-white">
                     {Number(food['energy-kcal_100g'] || 0).toFixed(2)} kcal
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     {Number(food.energy_100g || 0).toFixed(2)} kJ
                   </p>
                 </div>
-                <div className="bg-blue-50 rounded-lg p-4">
-                  <p className="text-sm text-gray-600">Protein</p>
-                  <p className="text-xl font-bold text-gray-900">{Number(food.proteins_100g || 0).toFixed(2)}g</p>
+                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Protein</p>
+                  <p className="text-xl font-bold text-gray-900 dark:text-white">{Number(food.proteins_100g || 0).toFixed(2)}g</p>
                 </div>
-                <div className="bg-yellow-50 rounded-lg p-4">
-                  <p className="text-sm text-gray-600">Carbs</p>
-                  <p className="text-xl font-bold text-gray-900">{Number(food.carbohydrates_100g || 0).toFixed(2)}g</p>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Carbs</p>
+                  <p className="text-xl font-bold text-gray-900 dark:text-white">{Number(food.carbohydrates_100g || 0).toFixed(2)}g</p>
                 </div>
-                <div className="bg-red-50 rounded-lg p-4">
-                  <p className="text-sm text-gray-600">Fat</p>
-                  <p className="text-xl font-bold text-gray-900">{Number(food.fat_100g || 0).toFixed(2)}g</p>
+                <div className="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Fat</p>
+                  <p className="text-xl font-bold text-gray-900 dark:text-white">{Number(food.fat_100g || 0).toFixed(2)}g</p>
                 </div>
               </div>
             </div>
 
             {/* Right Column - Detailed Nutrition */}
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h2 className="text-xl font-semibold mb-4">Nutrition Facts</h2>
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Nutrition Facts</h2>
               <div className="space-y-4">
                 <NutrientRow 
                   label="Energy" 
@@ -165,14 +168,14 @@ export default function FoodDetailPage({ params }: { params: { id: string } }) {
                 <NutrientRow label="Vitamin D" value={food.vitamin_d_100g} unit="g" />
               </div>
 
-              <div className="mt-8 pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-500">Bar Code: {food.bar_code}</p>
+              <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-600">
+                <p className="text-sm text-gray-500 dark:text-gray-400">Bar Code: {food.bar_code}</p>
                 {food.info_url && (
                   <a 
                     href={food.info_url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-sm text-green-600 hover:text-green-700 mt-2 block"
+                    className="text-sm text-primary-600 dark:text-primary-800 hover:text-primary-700 dark:hover:text-primary-300 mt-2 block"
                   >
                     View on Open Food Facts →
                   </a>
@@ -180,14 +183,6 @@ export default function FoodDetailPage({ params }: { params: { id: string } }) {
               </div>
             </div>
           </div>
-
-          <motion.button
-            className="w-full mt-8 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Add to Food Diary
-          </motion.button>
         </div>
       </div>
     </div>
@@ -207,14 +202,14 @@ const NutrientRow = ({
   secondaryValue?: number | null;
   secondaryUnit?: string;
 }) => (
-  <div className="flex justify-between py-2 border-b border-gray-200 last:border-0">
-    <span className="text-gray-600">{label}</span>
+  <div className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600 last:border-0">
+    <span className="text-gray-600 dark:text-gray-300">{label}</span>
     <div className="text-right">
-      <span className="font-medium text-gray-900">
+      <span className="font-medium text-gray-900 dark:text-white">
         {value ? `${Number(value).toFixed(2)}${unit}` : 'N/A'}
       </span>
       {secondaryValue && secondaryUnit && (
-        <span className="text-gray-500 text-sm block">
+        <span className="text-gray-500 dark:text-gray-400 text-sm block">
           {Number(secondaryValue).toFixed(2)}{secondaryUnit}
         </span>
       )}

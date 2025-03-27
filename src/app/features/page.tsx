@@ -79,20 +79,21 @@ const integrations = [
 
 const FeaturesPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-green-50 to-white py-16">
-        <div className="w-[70%] mx-auto text-center">
+      <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
+            className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
               Powerful Features
-              <span className="block text-green-600 mt-2">For Your Fitness Journey</span>
+              <span className="block text-primary-600 dark:text-primary-900 mt-2">For Your Fitness Journey</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Discover how CaloSync combines cutting-edge technology with intuitive design to make your nutrition tracking effortless.
             </p>
           </motion.div>
@@ -100,39 +101,39 @@ const FeaturesPage = () => {
       </div>
 
       {/* Main Features */}
-      <div className="w-[70%] mx-auto py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12 sm:py-16 lg:py-20">
         {features.map((feature, index) => (
           <motion.div
             key={feature.title}
-            className={`flex flex-col md:flex-row items-center gap-12 py-16 ${
-              index !== features.length - 1 ? 'border-b border-gray-200' : ''
+            className={`flex flex-col md:flex-row items-center gap-8 sm:gap-12 py-12 sm:py-16 ${
+              index !== features.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''
             }`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <div className={`md:w-1/2 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">{feature.title}</h2>
-              <p className="text-lg text-gray-600 mb-8">{feature.description}</p>
-              <ul className="space-y-4">
+            <div className={`w-full md:w-1/2 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">{feature.title}</h2>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8">{feature.description}</p>
+              <ul className="space-y-3 sm:space-y-4">
                 {feature.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-center space-x-3">
-                    <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="h-5 w-5 flex-shrink-0 text-primary-500 dark:text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">{benefit}</span>
+                    <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className={`md:w-1/2 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-              <div className="relative w-full aspect-square max-w-md mx-auto">
+            <div className={`w-full md:w-1/2 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+              <div className="relative w-full aspect-square max-w-sm sm:max-w-md mx-auto">
                 <Image
                   src={feature.image}
                   alt={feature.title}
                   fill
-                  className="object-contain"
+                  className="object-contain dark:brightness-90"
                 />
               </div>
             </div>
@@ -141,26 +142,26 @@ const FeaturesPage = () => {
 
         {/* Integrations Section */}
         <motion.div
-          className="mt-16 py-16 border-t border-gray-200"
+          className="mt-12 sm:mt-16 py-12 sm:py-16 border-t border-gray-200 dark:border-gray-700"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-center">
             Seamless Integrations
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {integrations.map((integration) => (
               <motion.div
                 key={integration.name}
-                className="bg-white p-6 rounded-xl shadow-md text-center"
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md dark:shadow-gray-800/30 text-center"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="text-4xl mb-4 block">{integration.icon}</span>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{integration.name}</h3>
-                <p className="text-gray-600">{integration.description}</p>
+                <span className="text-3xl sm:text-4xl mb-4 block">{integration.icon}</span>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{integration.name}</h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{integration.description}</p>
               </motion.div>
             ))}
           </div>
@@ -168,19 +169,19 @@ const FeaturesPage = () => {
 
         {/* CTA Section */}
         <motion.div
-          className="mt-16 bg-green-50 rounded-2xl p-12 text-center"
+          className="mt-12 sm:mt-16 bg-primary-50 dark:bg-primary-900/20 rounded-2xl p-6 sm:p-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Ready to Transform Your Fitness Journey?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-base sm:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8">
             Join thousands of users who are achieving their health goals with CaloSync.
           </p>
-          <button className="px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
+          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 dark:bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors text-sm sm:text-base shadow-lg hover:shadow-xl">
             Download Now - It&apos;s Free
           </button>
         </motion.div>
