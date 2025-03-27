@@ -17,7 +17,7 @@ const tiers = [
       'Community support'
     ],
     cta: 'Download Now',
-    ctaLink: 'https://play.google.com/store',
+    ctaLink: 'https://play.google.com/store/apps/details?id=com.app.caloriecounter&hl=en',
     highlighted: false
   },
   {
@@ -37,7 +37,7 @@ const tiers = [
       'Priority support'
     ],
     cta: 'Get Premium Now',
-    ctaLink: 'https://play.google.com/store',
+    ctaLink: 'https://play.google.com/store/apps/details?id=com.app.caloriecounter&hl=en',
     highlighted: true,
     badge: 'MOST POPULAR'
   },
@@ -56,7 +56,7 @@ const tiers = [
       'Early access to new features'
     ],
     cta: 'Get Lifetime Access',
-    ctaLink: 'https://play.google.com/store',
+    ctaLink: 'https://play.google.com/store/apps/details?id=com.app.caloriecounter&hl=en',
     highlighted: false,
     badge: 'BEST VALUE'
   }

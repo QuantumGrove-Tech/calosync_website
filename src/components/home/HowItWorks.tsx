@@ -111,8 +111,8 @@ const HowItWorks = () => {
               Ready to take control of your nutrition? Join thousands already using CaloSync!
             </h3>
             <Link
-              href="https://play.google.com/store"
-              className="inline-flex items-center justify-center px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-base sm:text-lg font-medium rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+              href="https://play.google.com/store/apps/details?id=com.app.caloriecounter&hl=en"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Download Now
             </Link>

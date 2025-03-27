@@ -120,7 +120,7 @@ const Features = () => {
               Start tracking smarter today! Download CaloSync now and hit your goals faster.
             </h3>
             <Link
-              href="https://play.google.com/store"
+              href="https://play.google.com/store/apps/details?id=com.app.caloriecounter"
               className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Download Now

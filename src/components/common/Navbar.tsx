@@ -13,10 +13,11 @@ const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '/features' },
-    { name: 'Meal Plans', href: '/meal-plans' },
-    { name: 'Food Search', href: '/food-search' },
-    { name: 'Blog', href: '/blogs' },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Contact us', href: '/contact' },
+    // { name: 'Meal Plans', href: '/meal-plans' },
+    // { name: 'Food Search', href: '/food-search' },
+    // { name: 'Blog', href: '/blogs' },
+    // { name: 'Pricing', href: '/pricing' },
   ]
 
   return (
@@ -58,12 +59,12 @@ const Navbar = () => {
               </Link>
             ))}
             <ThemeToggle />
-            <Link
+            {/* <Link
               href="/login"
               className="whitespace-nowrap bg-primary-600 dark:bg-primary-500 text-white px-3 lg:px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-500 dark:hover:bg-primary-400 transition-colors ml-2"
             >
               Sign In
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile menu button */}

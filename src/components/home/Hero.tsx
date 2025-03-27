@@ -35,8 +35,8 @@ const Hero = () => {
 
               <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <Link
-                  href="https://play.google.com/store"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 text-base sm:text-lg font-medium rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 md:py-4 md:px-10 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  href="https://play.google.com/store/apps/details?id=com.app.caloriecounter&hl=en"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   Download Now
                 </Link>

@@ -89,10 +89,10 @@ const DownloadCTA = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Link
-                  href="https://play.google.com/store"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  href="https://play.google.com/store/apps/details?id=com.app.caloriecounter"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white bg-primary-600 dark:bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
-                  Download Now - It&apos;s Free!
+                  Download Now
                 </Link>
                 <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
