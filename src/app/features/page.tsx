@@ -7,7 +7,7 @@ const features = [
   {
     title: 'Smart Calorie Tracking',
     description: 'Effortlessly track your daily calories with our AI-powered food recognition system. Simply take a photo of your meal, and let CaloSync do the rest.',
-    image: '/images/app-mockup.png',
+    image: '/images/features/calorie_track.png',
     benefits: [
       'Instant food recognition',
       'Barcode scanner',
@@ -19,7 +19,7 @@ const features = [
   {
     title: 'Personalized Meal Plans',
     description: 'Get customized meal suggestions based on your preferences, dietary restrictions, and fitness goals. Our AI adapts to your tastes while ensuring optimal nutrition.',
-    image: '/images/app-mockup.png',
+    image: '/images/features/meal_plan.png',
     benefits: [
       'AI-powered recommendations',
       'Dietary restriction handling',
@@ -31,7 +31,7 @@ const features = [
   {
     title: 'Progress Tracking',
     description: 'Monitor your fitness journey with comprehensive analytics and insights. Track weight, measurements, and see your progress visualized clearly.',
-    image: '/images/app-mockup.png',
+    image: '/images/features/progress_tracking.png',
     benefits: [
       'Visual progress charts',
       'Body measurements',
@@ -43,7 +43,7 @@ const features = [
   {
     title: 'Nutrition Insights',
     description: 'Understand your eating habits with detailed nutritional breakdowns and actionable insights to improve your diet quality.',
-    image: '/images/app-mockup.png',
+    image: '/images/features/nutrition_insight.png',
     benefits: [
       'Macro tracking',
       'Vitamin analysis',
@@ -105,9 +105,8 @@ const FeaturesPage = () => {
         {features.map((feature, index) => (
           <motion.div
             key={feature.title}
-            className={`flex flex-col md:flex-row items-center gap-8 sm:gap-12 py-12 sm:py-16 ${
-              index !== features.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''
-            }`}
+            className={`flex flex-col md:flex-row items-center gap-8 sm:gap-12 py-12 sm:py-16 ${index !== features.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''
+              }`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -128,7 +127,7 @@ const FeaturesPage = () => {
               </ul>
             </div>
             <div className={`w-full md:w-1/2 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-              <div className="relative w-full aspect-square max-w-sm sm:max-w-md mx-auto">
+              <div className="relative w-full aspect-square max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
                 <Image
                   src={feature.image}
                   alt={feature.title}
@@ -181,7 +180,10 @@ const FeaturesPage = () => {
           <p className="text-base sm:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8">
             Join thousands of users who are achieving their health goals with CaloSync.
           </p>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 dark:bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors text-sm sm:text-base shadow-lg hover:shadow-xl">
+          <button 
+            onClick={() => window.open('https://play.google.com/store/apps/details?id=com.app.caloriecounter', '_blank')}
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 dark:bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors text-sm sm:text-base shadow-lg hover:shadow-xl"
+          >
             Download Now - It&apos;s Free
           </button>
         </motion.div>

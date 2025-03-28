@@ -110,9 +110,9 @@ const DownloadCTA = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="relative w-full max-w-md mx-auto aspect-[3/4]">
+              <div className="relative w-full max-w-[520px] lg:max-w-[650px] mx-auto aspect-[3/4]">
                 <Image
-                  src="/images/app-mockup.png"
+                  src="/images/get_started_image.png"
                   alt="CaloSync App Features"
                   fill
                   className="object-contain dark:brightness-90"

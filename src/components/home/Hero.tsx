@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const Hero = () => {
   const scrollToFeatures = () => {
-    const featuresSection = document.getElementById('features')
-    featuresSection?.scrollIntoView({ behavior: 'smooth' })
+    const howItWorksSection = document.getElementById('how-it-works')
+    howItWorksSection?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -70,15 +70,15 @@ const Hero = () => {
 
             {/* Hero Image */}
             <motion.div 
-              className="w-full lg:w-1/2 max-w-md lg:max-w-none mx-auto"
+              className="w-full lg:w-1/2 max-w-[520px] lg:max-w-[650px] mx-auto"
               initial={{ opacity: 1, x: 0 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="relative w-full aspect-[3/4]">
+              <div className="relative w-full max-w-[520px] lg:max-w-[650px] mx-auto aspect-[3/4]">
                 <Image
-                  src="/images/app-mockup.png"
+                  src="/images/hero_section_image.png"
                   alt="CaloSync App Interface"
                   fill
                   className="object-contain dark:brightness-90"

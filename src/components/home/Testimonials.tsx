@@ -5,30 +5,27 @@ import Image from 'next/image'
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
+    name: 'David Anderson',
     image: '/images/app-mockup.png',
-    achievement: 'Lost 25 lbs in 4 months',
-    quote: 'CaloSync made tracking my meals so easy. The AI suggestions helped me make better food choices, and the results speak for themselves!',
-    beforeImage: '/images/app-mockup.png',
-    afterImage: '/images/app-mockup.png',
+    achievement: 'Lost 25 kg in 6 months',
+    quote: 'CaloSync transformed my life! The personalized meal plans and calorie tracking helped me achieve my weight loss goals. The AI suggestions made healthy eating so much easier.',
+    transformationImage: '/images/before_after_1.png',
     rating: 5,
   },
   {
-    name: 'Mike Chen',
+    name: 'Sophie Martinez',
     image: '/images/app-mockup.png',
-    achievement: 'Gained 15 lbs muscle mass',
-    quote: 'The macro tracking and meal suggestions were perfect for my muscle gain journey. Best fitness app I\'ve ever used!',
-    beforeImage: '/images/app-mockup.png',
-    afterImage: '/images/app-mockup.png',
+    achievement: 'Lost 15 kg in 4 months',
+    quote: 'I never thought I could achieve such amazing results! CaloSync\'s smart tracking and meal suggestions helped me make sustainable lifestyle changes. The progress tracking kept me motivated.',
+    transformationImage: '/images/before_after_2.png',
     rating: 5,
   },
   {
-    name: 'Emma Davis',
+    name: 'James Wilson',
     image: '/images/app-mockup.png',
-    achievement: 'Maintained weight for 1 year',
-    quote: 'Finally found an app that helps me maintain a healthy lifestyle without feeling restricted. The reminders and tips are so helpful!',
-    beforeImage: '/images/app-mockup.png',
-    afterImage: '/images/app-mockup.png',
+    achievement: 'Transformed body composition',
+    quote: 'CaloSync helped me get in shape and build muscle while losing fat. The macro tracking and meal planning features are incredible. Best fitness app I\'ve ever used!',
+    transformationImage: '/images/before_after_3.png',
     rating: 5,
   },
 ]
@@ -62,31 +59,13 @@ const Testimonials = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="relative h-32 sm:h-40 bg-primary-50 dark:bg-primary-900/20">
-                  <div className="absolute inset-0 flex">
-                    <div className="w-1/2 relative">
-                      <Image
-                        src={testimonial.beforeImage}
-                        alt={`${testimonial.name} before`}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute bottom-1 left-1 bg-black/50 text-white text-xs px-1.5 py-0.5 rounded">
-                        Before
-                      </div>
-                    </div>
-                    <div className="w-1/2 relative">
-                      <Image
-                        src={testimonial.afterImage}
-                        alt={`${testimonial.name} after`}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute bottom-1 right-1 bg-black/50 text-white text-xs px-1.5 py-0.5 rounded">
-                        After
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative h-48 sm:h-56 bg-primary-50 dark:bg-primary-900/20">
+                  <Image
+                    src={testimonial.transformationImage}
+                    alt={`${testimonial.name}'s transformation`}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="p-3 sm:p-4 lg:p-6">
@@ -142,7 +121,7 @@ const Testimonials = () => {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 lg:gap-12">
               <div className="flex items-center">
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-900">
-                  10K+
+                  200K+
                 </span>
                 <span className="ml-2 text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-300">
                   Active Users
@@ -150,10 +129,18 @@ const Testimonials = () => {
               </div>
               <div className="flex items-center">
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-900">
-                  4.8
+                  1M+
                 </span>
                 <span className="ml-2 text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-300">
-                  Average Rating
+                  Downloads
+                </span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-900">
+                  4.6+
+                </span>
+                <span className="ml-2 text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-300">
+                  Rating
                 </span>
               </div>
             </div>
