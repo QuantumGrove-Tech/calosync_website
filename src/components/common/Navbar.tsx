@@ -13,11 +13,10 @@ const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '/features' },
-    { name: 'Contact us', href: '/contact' },
-    // { name: 'Meal Plans', href: '/meal-plans' },
-    // { name: 'Food Search', href: '/food-search' },
-    // { name: 'Blog', href: '/blogs' },
-    // { name: 'Pricing', href: '/pricing' },
+    { name: 'Food Search', href: '/food-search' },
+    { name: 'Meal Plans', href: '/meal-plans' },
+    { name: 'Blog', href: '/blogs' },
+    { name: 'Pricing', href: '/pricing' },
   ]
 
   return (

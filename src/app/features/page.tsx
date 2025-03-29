@@ -180,7 +180,7 @@ const FeaturesPage = () => {
           <p className="text-base sm:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8">
             Join thousands of users who are achieving their health goals with CaloSync.
           </p>
-          <button 
+          <button
             onClick={() => window.open('https://play.google.com/store/apps/details?id=com.app.caloriecounter', '_blank')}
             className="px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 dark:bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors text-sm sm:text-base shadow-lg hover:shadow-xl"
           >

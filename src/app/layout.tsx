@@ -15,6 +15,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'CalSync - AI-Powered Nutrition & Meal Planning',
   description: 'Track your nutrition, get personalized AI meal plans, and achieve your fitness goals with CalSync.',
+  icons: {
+    icon: '/fav_icon.png',
+    apple: '/fav_icon.png',
+  },
 }
 
 export default function RootLayout({

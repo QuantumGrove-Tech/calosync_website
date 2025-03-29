@@ -5,19 +5,17 @@ const Footer = () => {
   const navigation = {
     product: [
       { name: 'Features', href: '/features' },
-      // { name: 'Meal Plans', href: '/meal-plans' },
+      { name: 'Meal Plans', href: '/meal-plans' },
       // { name: 'Food Search', href: '/food-search' },
       // { name: 'Pricing', href: '/pricing' },
     ],
     support: [
-      { name: 'Help Center', href: '#' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
       { name: 'Contact', href: '/contact' },
     ],
     company: [
-      { name: 'About Us', href: '#' },
-      // { name: 'Blog', href: '/blog' },
+      { name: 'Blog', href: '/blogs' },
       { name: 'Download App', href: 'https://play.google.com/store/apps/details?id=com.app.caloriecounter&hl=en' },
     ],
     // social: [

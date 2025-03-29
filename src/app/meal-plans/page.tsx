@@ -2,45 +2,19 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-const dietTypes = [
-  {
-    name: 'Weight Loss',
-    description: 'Scientifically designed meal plans to help you lose weight while maintaining energy and satisfaction.',
-    image: '/images/app-mockup.png',
-    features: [
-      'Calorie-controlled portions',
-      'High protein for satiety',
-      'Complex carbs for energy',
-      'Healthy fats for hormone balance',
-      'Fiber-rich foods for fullness'
-    ]
-  },
-  {
-    name: 'Muscle Gain',
-    description: 'Protein-rich meal plans optimized for muscle growth and recovery during training.',
-    image: '/images/app-mockup.png',
-    features: [
-      'High protein distribution',
-      'Strategic carb timing',
-      'Pre/post workout nutrition',
-      'Mass gaining options',
-      'Recovery-focused meals'
-    ]
-  },
-  {
-    name: 'Maintenance',
-    description: 'Balanced meal plans to maintain your ideal weight while enjoying diverse, nutritious foods.',
-    image: '/images/app-mockup.png',
-    features: [
-      'Balanced macronutrients',
-      'Flexible meal timing',
-      'Variety of food choices',
-      'Social eating options',
-      'Long-term sustainability'
-    ]
-  }
-]
+type MealPlan = {
+  id: number;
+  diet_plan: string;
+  diet_type: string;
+  title: string;
+  intro: string;
+  cover_url: string;
+  tags: string[];
+  short_description: string;
+}
 
 const dietaryPreferences = [
   'Vegetarian', 'Vegan', 'Keto', 'Paleo',
@@ -93,6 +67,30 @@ const testimonials = [
 ]
 
 const MealPlansPage = () => {
+  const [mealPlans, setMealPlans] = useState<MealPlan[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchMealPlans = async () => {
+      try {
+        const response = await fetch('https://api.quantumgrove.tech:8002/getMeals');
+        if (!response.ok) {
+          throw new Error('Failed to fetch meal plans');
+        }
+        const data = await response.json();
+        setMealPlans(data);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching meal plans:', err);
+        setError('Failed to load meal plans. Please try again later.');
+        setLoading(false);
+      }
+    };
+
+    fetchMealPlans();
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
@@ -106,7 +104,7 @@ const MealPlansPage = () => {
           >
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
               AI-Powered Meal Plans
-              <span className="block text-primary-600 dark:text-primary-900 mt-2">Personalized for Your Goals</span>
+              <span className="block text-primary-600 dark:text-primary-400 mt-2">Personalized for Your Goals</span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Experience the future of nutrition with meal plans that adapt to your preferences, lifestyle, and goals.
@@ -117,42 +115,70 @@ const MealPlansPage = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12 sm:py-16 lg:py-20">
-        {/* Diet Types */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
-          {dietTypes.map((diet, index) => (
-            <motion.div
-              key={diet.name}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-800/30 overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <div className="relative h-40 sm:h-48">
-                <Image
-                  src={diet.image}
-                  alt={diet.name}
-                  fill
-                  className="object-cover dark:brightness-90"
-                />
-              </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">{diet.name}</h3>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-200 mb-4 sm:mb-6">{diet.description}</p>
-                <ul className="space-y-2 sm:space-y-3">
-                  {diet.features.map((feature) => (
-                    <li key={feature} className="flex items-center space-x-3">
-                      <svg className="h-5 w-5 flex-shrink-0 text-primary-500 dark:text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm sm:text-base text-gray-700 dark:text-gray-200">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Meal Plans from API */}
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary-500 border-r-transparent"></div>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">Loading meal plans...</p>
+          </div>
+        ) : error ? (
+          <div className="text-center py-12 text-red-500 dark:text-red-400">
+            <p>{error}</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+            {mealPlans.map((plan, index) => (
+              <motion.div
+                key={plan.id}
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-800/30 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={plan.cover_url}
+                    alt={plan.diet_plan}
+                    fill
+                    className="object-cover dark:brightness-90"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-block px-3 py-1 rounded-full bg-white/90 dark:bg-gray-900/90 text-primary-600 dark:text-primary-400 text-sm font-medium">
+                      {plan.diet_type}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">
+                    {plan.diet_plan}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                    {plan.short_description}
+                  </p>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {plan.tags.slice(0, 3).map((tag, i) => (
+                      <span key={i} className="inline-block px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                    {plan.tags.length > 3 && (
+                      <span className="inline-block px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs">
+                        +{plan.tags.length - 3} more
+                      </span>
+                    )}
+                  </div>
+                  <Link 
+                    href={`/meal-plans/${plan.id}`}
+                    className="mt-2 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                  >
+                    View Full Plan
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
         {/* Dietary Preferences */}
         <motion.div
@@ -233,7 +259,7 @@ const MealPlansPage = () => {
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white text-center mb-2">
                   {testimonial.name}
                 </h3>
-                <p className="text-sm text-primary-600 dark:text-primary-900 text-center mb-3 sm:mb-4">{testimonial.plan}</p>
+                <p className="text-sm text-primary-600 dark:text-primary-400 text-center mb-3 sm:mb-4">{testimonial.plan}</p>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center italic">&quot;{testimonial.quote}&quot;</p>
               </motion.div>
             ))}
@@ -254,8 +280,11 @@ const MealPlansPage = () => {
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8">
             Get your AI-powered meal plan today and transform your relationship with food.
           </p>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 dark:bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors text-sm sm:text-base shadow-lg hover:shadow-xl">
-            Create Your Meal Plan
+          <button 
+            onClick={() => window.open('https://play.google.com/store/apps/details?id=com.app.caloriecounter', '_blank')}
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 dark:bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors text-sm sm:text-base shadow-lg hover:shadow-xl"
+          >
+            Download App
           </button>
         </motion.div>
       </div>

@@ -5,101 +5,86 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-interface FoodItem {
-  bar_code: string
-  name: string
-  'energy-kcal_100g': number | null
-  energy_100g: number | null
+interface Nutrient {
+  label: string;
+  quantity: number | null;
+  unit: string;
 }
 
-interface DetailedFoodItem extends FoodItem {
+interface FoodItem {
+  foodId: number;
+  label: string;
+  nutrients: {
+    [key: string]: Nutrient;
+  };
   brand: string | null;
-  categories: string | null;
-  proteins_100g: number | null;
-  fat_100g: number | null;
-  carbohydrates_100g: number | null;
-  fiber_100g: number | null;
-  sodium_100g: number | null;
-  info_url: string | null;
+  category: string | null;
+  servingSizes: {
+    label: string;
+    quantity: number;
+  }[];
 }
 
 interface ApiResponse {
-  response_message: string
-  response_status: string
-  data: {
-    UUID: string
-    info: {
-      age: string
-      gender: string
-    }
-    metadata: FoodItem[]
-  }
+  text: string;
+  count: number;
+  hints: {
+    food: FoodItem;
+  }[];
 }
 
 const FoodCard = ({ food }: { food: FoodItem }) => {
-  const router = useRouter()
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    // Encode the food data and pass it as a URL parameter
+    const encodedData = encodeURIComponent(JSON.stringify(food));
+    router.push(`/food/${food.foodId}?data=${encodedData}`);
+  };
 
   return (
     <motion.div
-      className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md dark:shadow-gray-800/30 dark:hover:shadow-gray-800/50 transition-shadow p-3 sm:p-4 cursor-pointer"
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      onClick={() => router.push(`/food/${food.bar_code}`)}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-sm dark:shadow-gray-800/30 border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-md dark:hover:shadow-gray-800/50 transition-shadow duration-200 cursor-pointer"
+      onClick={handleCardClick}
     >
-      <div className="aspect-square relative mb-3 sm:mb-4 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
+      <div className="relative h-48">
         <Image
           src="/images/food-placeholder.png"
-          alt={food.name}
+          alt={food.label}
           fill
           className="object-cover dark:brightness-90"
         />
+        <div className="absolute top-2 right-2 bg-primary-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+          {food.category || 'Food'}
+        </div>
       </div>
-      <h3 className="font-medium text-gray-900 dark:text-white text-sm sm:text-base line-clamp-2 mb-1 sm:mb-2">
-        {food.name}
-      </h3>
-      <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-        {Number(food['energy-kcal_100g'] || 0).toFixed(2)} kcal/100g
-      </p>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{food.label}</h3>
+        {food.brand && (
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{food.brand}</p>
+        )}
+        <div className="flex flex-wrap gap-2">
+          {Object.entries(food.nutrients)
+            .filter(([key]) => ['ENERC_KCAL', 'PROCNT', 'CHOCDF', 'FAT'].includes(key))
+            .map(([key, nutrient]) => (
+              <span
+                key={key}
+                className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full"
+              >
+                {nutrient.label}: {nutrient.quantity?.toFixed(1)} {nutrient.unit}
+              </span>
+            ))}
+        </div>
+      </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const FoodModal = ({ food, onClose }: { food: FoodItem; onClose: () => void }) => {
-  const [detailedFood, setDetailedFood] = useState<DetailedFoodItem | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    const fetchFoodDetails = async () => {
-      try {
-        const response = await fetch(`https://api.quantumgrove.tech:8002/SearchFood_Id/${food.bar_code}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch food details');
-        }
-
-        const data = await response.json();
-        if (data.response_status === "True" && data.data.metadata?.[0]) {
-          setDetailedFood(data.data.metadata[0]);
-        } else {
-          throw new Error('No detailed data found');
-        }
-      } catch (err) {
-        setError('Failed to load detailed information');
-        console.error(err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchFoodDetails();
-  }, [food.bar_code]);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -112,11 +97,11 @@ const FoodModal = ({ food, onClose }: { food: FoodItem; onClose: () => void }) =
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-white rounded-2xl p-6 max-w-lg w-full shadow-xl max-h-[90vh] overflow-y-auto"
+        className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-lg w-full shadow-xl max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         <div className="flex justify-between items-start mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">{food.name}</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{food.label}</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-500">
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -124,79 +109,71 @@ const FoodModal = ({ food, onClose }: { food: FoodItem; onClose: () => void }) =
           </button>
         </div>
 
-        {isLoading ? (
-          <div className="flex justify-center py-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-500"></div>
+        <div className="space-y-6">
+          <div className="aspect-video relative bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
+            <Image
+              src={"/images/food-placeholder.png"}
+              alt={food.label}
+              fill
+              className="object-cover"
+            />
           </div>
-        ) : error ? (
-          <div className="text-red-500 text-center py-4">{error}</div>
-        ) : detailedFood && (
-          <div className="space-y-6">
-            <div className="aspect-video relative bg-gray-100 rounded-lg overflow-hidden">
-              <Image
-                src={"/images/food-placeholder.png"}
-                alt={detailedFood.name}
-                fill
-                className="object-cover"
-              />
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+              <p className="text-sm text-gray-600 dark:text-gray-300">Energy</p>
+              <p className="text-xl font-bold text-gray-900 dark:text-white">
+                {food.nutrients['ENERC_KCAL']?.quantity || 0} kcal
+              </p>
             </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-green-50 rounded-lg p-4">
-                <p className="text-sm text-gray-600">Energy</p>
-                <p className="text-xl font-bold text-gray-900">{detailedFood.energy_100g || 0} kcal</p>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-4">
-                <p className="text-sm text-gray-600">Protein</p>
-                <p className="text-xl font-bold text-gray-900">{detailedFood.proteins_100g || 0}g</p>
-              </div>
-              <div className="bg-yellow-50 rounded-lg p-4">
-                <p className="text-sm text-gray-600">Carbs</p>
-                <p className="text-xl font-bold text-gray-900">{detailedFood.carbohydrates_100g || 0}g</p>
-              </div>
-              <div className="bg-red-50 rounded-lg p-4">
-                <p className="text-sm text-gray-600">Fat</p>
-                <p className="text-xl font-bold text-gray-900">{detailedFood.fat_100g || 0}g</p>
-              </div>
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+              <p className="text-sm text-gray-600 dark:text-gray-300">Protein</p>
+              <p className="text-xl font-bold text-gray-900 dark:text-white">
+                {food.nutrients['PROCNT']?.quantity || 0}g
+              </p>
             </div>
-
-            {detailedFood.brand && (
-              <div>
-                <h3 className="text-sm font-medium text-gray-500">Brand</h3>
-                <p className="text-gray-900">{detailedFood.brand}</p>
-              </div>
-            )}
-
-            {detailedFood.categories && (
-              <div>
-                <h3 className="text-sm font-medium text-gray-500">Categories</h3>
-                <p className="text-gray-900">{detailedFood.categories}</p>
-              </div>
-            )}
-
-            <div className="pt-4 border-t border-gray-200">
-              <p className="text-sm text-gray-500">Bar Code: {detailedFood.bar_code}</p>
-              {detailedFood.info_url && (
-                <a 
-                  href={detailedFood.info_url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-sm text-green-600 hover:text-green-700 mt-2 block"
-                >
-                  View on Open Food Facts →
-                </a>
-              )}
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4">
+              <p className="text-sm text-gray-600 dark:text-gray-300">Carbs</p>
+              <p className="text-xl font-bold text-gray-900 dark:text-white">
+                {food.nutrients['CHOCDF']?.quantity || 0}g
+              </p>
             </div>
-
-            <motion.button
-              className="w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Add to Food Diary
-            </motion.button>
+            <div className="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+              <p className="text-sm text-gray-600 dark:text-gray-300">Fat</p>
+              <p className="text-xl font-bold text-gray-900 dark:text-white">
+                {food.nutrients['FAT']?.quantity || 0}g
+              </p>
+            </div>
           </div>
-        )}
+
+          {food.brand && (
+            <div>
+              <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">Brand</h3>
+              <p className="text-gray-900 dark:text-white">{food.brand}</p>
+            </div>
+          )}
+
+          {food.category && (
+            <div>
+              <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">Category</h3>
+              <p className="text-gray-900 dark:text-white">{food.category}</p>
+            </div>
+          )}
+
+          <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Serving Size: {food.servingSizes[0]?.quantity}g
+            </p>
+          </div>
+
+          <motion.button
+            className="w-full px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Add to Food Diary
+          </motion.button>
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -208,8 +185,11 @@ const FoodSearchPage = () => {
   const [searchResults, setSearchResults] = useState<FoodItem[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalCount, setTotalCount] = useState(0)
+  const [hasMore, setHasMore] = useState(true)
 
-  const searchFood = async (query: string) => {
+  const searchFood = async (query: string, page: number = 1) => {
     if (query.trim().length === 0) {
       setSearchResults([])
       return
@@ -219,30 +199,30 @@ const FoodSearchPage = () => {
     setError(null)
 
     try {
-      const response = await fetch(`https://api.quantumgrove.tech:8002/SeachFood_Name/${encodeURIComponent(query)}/20`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          food_name: query
-        })
-      })
+      const response = await fetch(
+        `https://api.quantumgrove.tech:8002/searchFood?ingr=${encodeURIComponent(query)}&page=${page}&limit=20`
+      )
 
       if (!response.ok) {
         throw new Error('Failed to fetch food data')
       }
 
       const data: ApiResponse = await response.json()
-      
-      if (data.response_status === "True") {
-        setSearchResults(data.data.metadata)
+
+      if (data.hints) {
+        const newResults = data.hints.map(hint => hint.food)
+        setSearchResults(prev => page === 1 ? newResults : [...prev, ...newResults])
+        setTotalCount(data.count)
+        setHasMore(newResults.length === 20)
+        setCurrentPage(page)
       } else {
         setSearchResults([])
+        setHasMore(false)
       }
     } catch (error) {
       setError('Failed to fetch food data. Please try again.')
       setSearchResults([])
+      setHasMore(false)
       console.error(error)
     } finally {
       setIsLoading(false)
@@ -250,7 +230,14 @@ const FoodSearchPage = () => {
   }
 
   const handleSearch = () => {
-    searchFood(searchTerm)
+    setCurrentPage(1)
+    searchFood(searchTerm, 1)
+  }
+
+  const loadMore = () => {
+    if (!isLoading && hasMore) {
+      searchFood(searchTerm, currentPage + 1)
+    }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -333,7 +320,7 @@ const FoodSearchPage = () => {
         {/* Search Results Grid */}
         <div className="mt-8">
           <AnimatePresence mode="wait">
-            {isLoading ? (
+            {isLoading && currentPage === 1 ? (
               <motion.div
                 key="loader"
                 initial={{ opacity: 0 }}
@@ -344,18 +331,32 @@ const FoodSearchPage = () => {
                 <div className="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-primary-500 dark:border-primary-400"></div>
               </motion.div>
             ) : searchResults.length > 0 ? (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
-              >
-                {searchResults.map((food) => (
-                  <FoodCard
-                    key={food.bar_code}
-                    food={food}
-                  />
-                ))}
-              </motion.div>
+              <>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
+                >
+                  {searchResults.map((food) => (
+                    <FoodCard
+                      key={food.foodId}
+                      food={food}
+                    />
+                  ))}
+                </motion.div>
+
+                {hasMore && (
+                  <div className="mt-8 text-center">
+                    <button
+                      onClick={loadMore}
+                      disabled={isLoading}
+                      className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50"
+                    >
+                      {isLoading ? 'Loading...' : 'Load More'}
+                    </button>
+                  </div>
+                )}
+              </>
             ) : searchTerm && (
               <motion.p
                 key="no-results"

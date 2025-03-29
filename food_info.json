@@ -1,0 +1,3026 @@
+{
+  "text": "egg",
+  "count": 20,
+  "hints": [
+    {
+      "food": {
+        "foodId": 319656,
+        "label": "EGG",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 367,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 90,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": null,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 63.3,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 150,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 44
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 518304,
+        "label": " EGGPLANT",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 24,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 5.95,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 3.6,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 3.57,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Vegetable",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 84
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 499755,
+        "label": " SAUSAGE, EGG & CHEESE CASSEROLE BITES",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 226,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 17.9,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 7.14,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 4.76,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 1.2,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 1.19,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 13.1,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 214,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 690,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 119,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 1.29,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Breakfast",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 84
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 499268,
+        "label": " VEGGIE TRICOLOR ROTINI PASTA",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 357,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 1.79,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 71.4,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 3.6,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 5.36,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 14.3,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 36,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 339,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 48,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 3.57,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": 0.01,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Pasta",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 56
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 204375,
+        "label": "\"\"ALLA NORMA\"\" WITH EGGPLANT & RICOTTA SALATA",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 59,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 3.8,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0.63,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 6.33,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 1.7,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 3.8,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 1.27,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 2,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 131,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 17,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0.46,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0.01,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 237
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 208856,
+        "label": "\"\"FRIED RICE\"\" CAULIFLOWER CRUMBLES CHOPPED CAULIFLOWER, CARROTS, CELERY, ONION & BROCCOLI IN A SWEET TERIYAKI SAUCE WITH GARLIC-GINGER WONTON STRIPS VEGGIE BOWL, CAULIFLOWER CRUMBLES",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 73,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 1.82,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 14.6,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 1.8,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 8.18,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 0.91,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 291,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 127,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 18,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0.33,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Sushi",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 110
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 369601,
+        "label": "\"EVERYTHING SNACKABLE EGGS & CRISPY DIP, \"EVERYTHING",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 198,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 13.2,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 3.3,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 5.49,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 1.1,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 1.1,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 14.3,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 363,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 571,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 154,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 66,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 1.98,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Snack",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 91
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 395242,
+        "label": "\"LUMBER JACK\" CENTER-CUT SMOKED SAUSAGE, FRESH BUTTERMILK BISCUIT, EGG & CHEESE SUPER-SIZE SANDWICHES, \"LUMBER JACK\"",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 250,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 17.3,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 8.33,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 13.5,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 0.6,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 3.85,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 10.3,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 74,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 923,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 96,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0.64,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Breakfast",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 156
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 562190,
+        "label": "\"MINIONS\" CHEESE, COOKED SAUSAGE CRUMBLES (MADE WITH TURKEY) & EGG BREAKFAST WRAP",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 234,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 9.03,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 3.61,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 25.7,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 3.6,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 1.19,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 12.6,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 46,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 364,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 235,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 150,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 2.19,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": 0,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Breakfast",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 85.05000305175781
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 369602,
+        "label": "\"RANCH\" SNACKABLE EGGS & CRUNCHY DIP, \"RANCH",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 209,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 15.4,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 3.85,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 3.3,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 1.1,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 15.4,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 363,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 363,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 154,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 44,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 1.98,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Snack",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 91
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 383508,
+        "label": "'SOUR CREAM' & ONION VEGGIE POPS SUPERSNACKS ORGANIC DRIED VEGETABLE SNACK, 'SOUR CREAM' & ONION",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 500,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 25,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 3.57,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": 7.14,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": 14.3,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 39.3,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 14.3,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 3.57,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 25,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 1000,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 750,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 143,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 5.14,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Snack",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 28
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 111485,
+        "label": "1 DOZEN FARM FRESH EGGS",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 140,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 10,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 3,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": null,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": null,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 12,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 370,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 140,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 40,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 1.44,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 63
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 118885,
+        "label": "1.25'' FROZEN VEGGIE CUPS ASSORTMENT",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 439,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 16,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 1,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 4,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 4,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 8,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 28,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 14,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 1,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 100
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 541095,
+        "label": "10 VEGGIE  PASTA SAUCE",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 62,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 3.1,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 7.08,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 1.8,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 4.42,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 0.88,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 230,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 124,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 27,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0.05,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Sauce",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 113
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 510582,
+        "label": "10\" EGG CUSTARD PIE",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 214,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 11.5,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 3.52,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 22.9,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 0.4,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 11.9,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 4.56,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 62,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 182,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 72,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0.58,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Pie",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 125
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 369085,
+        "label": "100% CAGE FREE LIQUID EGG WHITES",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 54,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 10.9,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 163,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 152,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 46
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 287639,
+        "label": "100% DURUM WHEAT SEMOLINA EGG PASTA",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 368,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 5.26,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 4.39,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 64.9,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 3.5,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 1.75,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 17.5,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 88,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 702,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 140,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 1.89,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": "Pasta",
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 57
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 123318,
+        "label": "100% EGG WHITES",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 54,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 2.17,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 10.9,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 163,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 130,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 46
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 296311,
+        "label": "100% EGG WHITES LIQUID EGG PRODUCT",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 54,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 10.9,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 163,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 163,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 46
+          }
+        ]
+      }
+    },
+    {
+      "food": {
+        "foodId": 379794,
+        "label": "100% EGG WHITES ORGANIC LIQUID EGGS",
+        "nutrients": {
+          "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 54,
+            "unit": "kcal"
+          },
+          "FAT": {
+            "label": "Total Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FASAT": {
+            "label": "Saturated Fat",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FATRN": {
+            "label": "Trans Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAMS": {
+            "label": "Monounsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "FAPU": {
+            "label": "Polyunsaturated Fat",
+            "quantity": null,
+            "unit": "g"
+          },
+          "CHOCDF": {
+            "label": "Carbohydrates",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "FIBTG": {
+            "label": "Dietary Fiber",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "SUGAR": {
+            "label": "Sugars",
+            "quantity": 0,
+            "unit": "g"
+          },
+          "PROCNT": {
+            "label": "Protein",
+            "quantity": 10.9,
+            "unit": "g"
+          },
+          "CHOLE": {
+            "label": "Cholesterol",
+            "quantity": 0,
+            "unit": "mg"
+          },
+          "NA": {
+            "label": "Sodium",
+            "quantity": 163,
+            "unit": "mg"
+          },
+          "K": {
+            "label": "Potassium",
+            "quantity": 163,
+            "unit": "mg"
+          },
+          "CA": {
+            "label": "Calcium",
+            "quantity": 9,
+            "unit": "mg"
+          },
+          "MG": {
+            "label": "Magnesium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "P": {
+            "label": "Phosphorus",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "FE": {
+            "label": "Iron",
+            "quantity": 1.74,
+            "unit": "mg"
+          },
+          "CU": {
+            "label": "Copper",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "ZN": {
+            "label": "Zinc",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "SE": {
+            "label": "Selenium",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "THIA": {
+            "label": "Thiamine (B1)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "RIBF": {
+            "label": "Riboflavin (B2)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "NIA": {
+            "label": "Niacin (B3)",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB6A": {
+            "label": "Vitamin B6",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITB12": {
+            "label": "Vitamin B12",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITC": {
+            "label": "Vitamin C",
+            "quantity": null,
+            "unit": "mg"
+          },
+          "VITA": {
+            "label": "Vitamin A",
+            "quantity": null,
+            "unit": "mg"
+          }
+        },
+        "brand": null,
+        "category": null,
+        "servingSizes": [
+          {
+            "label": "Serving",
+            "quantity": 46
+          }
+        ]
+      }
+    }
+  ]
+}

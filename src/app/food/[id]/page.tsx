@@ -4,70 +4,164 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useParams } from 'next/navigation'
+import { useParams, useSearchParams } from 'next/navigation'
 
-interface DetailedFoodItem {
-  name: string;
-  bar_code: string;
-  info_url: string | null;
-  brand: string | null;
-  categories: string | null;
-  'energy-kcal_100g': number | null;
-  energy_100g: number | null;
-  fat_100g: number | null;
-  proteins_100g: number | null;
-  carbohydrates_100g: number | null;
-  fiber_100g: number | null;
-  sodium_100g: number | null;
-  sugars_100g: number | null;
-  saturated_fat_100g: number | null;
-  cholesterol_100g: number | null;
-  calcium_100g: number | null;
-  iron_100g: number | null;
-  potassium_100g: number | null;
-  vitamin_a_100g: number | null;
-  vitamin_c_100g: number | null;
-  vitamin_d_100g: number | null;
+interface Nutrient {
+  label: string;
+  quantity: number | null;
+  unit: string;
 }
+
+interface FoodItem {
+  foodId: number;
+  label: string;
+  nutrients: {
+    [key: string]: Nutrient;
+  };
+  brand: string | null;
+  category: string | null;
+  servingSizes: {
+    label: string;
+    quantity: number;
+  }[];
+}
+
+const NutritionLabel = ({ food }: { food: FoodItem }) => {
+  const getNutrientValue = (key: string) => {
+    return food.nutrients[key]?.quantity || 0;
+  };
+
+  const servingSize = food.servingSizes[0]?.quantity || 100;
+  const calories = getNutrientValue('ENERC_KCAL');
+  const totalFat = getNutrientValue('FAT');
+  const saturatedFat = getNutrientValue('FASAT');
+  const transFat = getNutrientValue('FATRN');
+  const cholesterol = getNutrientValue('CHOLE');
+  const sodium = getNutrientValue('NA');
+  const totalCarbs = getNutrientValue('CHOCDF');
+  const dietaryFiber = getNutrientValue('FIBTG');
+  const sugars = getNutrientValue('SUGAR');
+  const protein = getNutrientValue('PROCNT');
+  const vitaminD = getNutrientValue('VITD');
+  const calcium = getNutrientValue('CA');
+  const iron = getNutrientValue('FE');
+  const potassium = getNutrientValue('K');
+
+  return (
+    <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border-2 border-black dark:border-gray-600 max-w-[300px]">
+      <div className="text-center border-b-2 border-black dark:border-gray-600 pb-2 mb-2">
+        <h3 className="font-bold text-lg">Nutrition Facts</h3>
+        <p className="text-sm">{servingSize}g per serving</p>
+      </div>
+
+      <div className="text-sm">
+        <div className="flex justify-between border-b border-black dark:border-gray-600 py-1">
+          <span className="font-bold">Amount per serving</span>
+          <span className="font-bold">% Daily Value*</span>
+        </div>
+
+        <div className="flex justify-between border-b border-black dark:border-gray-600 py-1">
+          <span className="font-bold">Calories</span>
+          <span className="font-bold">{calories.toFixed(0)}</span>
+        </div>
+
+        <div className="flex justify-between border-b border-black dark:border-gray-600 py-1">
+          <span className="font-bold">Total Fat</span>
+          <span className="font-bold">{totalFat.toFixed(1)}g</span>
+        </div>
+
+        <div className="flex justify-between pl-4 border-b border-black dark:border-gray-600 py-1">
+          <span>Saturated Fat</span>
+          <span>{saturatedFat.toFixed(1)}g</span>
+        </div>
+
+        <div className="flex justify-between pl-4 border-b border-black dark:border-gray-600 py-1">
+          <span>Trans Fat</span>
+          <span>{transFat.toFixed(1)}g</span>
+        </div>
+
+        <div className="flex justify-between border-b border-black dark:border-gray-600 py-1">
+          <span className="font-bold">Cholesterol</span>
+          <span className="font-bold">{cholesterol.toFixed(1)}mg</span>
+        </div>
+
+        <div className="flex justify-between border-b border-black dark:border-gray-600 py-1">
+          <span className="font-bold">Sodium</span>
+          <span className="font-bold">{sodium.toFixed(1)}mg</span>
+        </div>
+
+        <div className="flex justify-between border-b border-black dark:border-gray-600 py-1">
+          <span className="font-bold">Total Carbohydrate</span>
+          <span className="font-bold">{totalCarbs.toFixed(1)}g</span>
+        </div>
+
+        <div className="flex justify-between pl-4 border-b border-black dark:border-gray-600 py-1">
+          <span>Dietary Fiber</span>
+          <span>{dietaryFiber.toFixed(1)}g</span>
+        </div>
+
+        <div className="flex justify-between pl-4 border-b border-black dark:border-gray-600 py-1">
+          <span>Total Sugars</span>
+          <span>{sugars.toFixed(1)}g</span>
+        </div>
+
+        <div className="flex justify-between border-b-2 border-black dark:border-gray-600 py-1">
+          <span className="font-bold">Protein</span>
+          <span className="font-bold">{protein.toFixed(1)}g</span>
+        </div>
+
+        <div className="flex justify-between py-1">
+          <span>Vitamin D</span>
+          <span>{vitaminD.toFixed(1)}µg</span>
+        </div>
+
+        <div className="flex justify-between py-1">
+          <span>Calcium</span>
+          <span>{calcium.toFixed(1)}mg</span>
+        </div>
+
+        <div className="flex justify-between py-1">
+          <span>Iron</span>
+          <span>{iron.toFixed(1)}mg</span>
+        </div>
+
+        <div className="flex justify-between border-t border-black dark:border-gray-600 py-1">
+          <span>Potassium</span>
+          <span>{potassium.toFixed(1)}mg</span>
+        </div>
+      </div>
+
+      <div className="text-xs mt-2">
+        <p>* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.</p>
+      </div>
+    </div>
+  );
+};
 
 export default function FoodDetailPage() {
   const params = useParams()
-  const [food, setFood] = useState<DetailedFoodItem | null>(null)
+  const searchParams = useSearchParams()
+  const [food, setFood] = useState<FoodItem | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const fetchFoodDetails = async () => {
-      try {
-        const response = await fetch(`https://api.quantumgrove.tech:8002/SearchFood_Id/${params.id}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch food details');
-        }
-
-        const data = await response.json();
-        if (data.response_status === "True" && data.data.metadata?.[0]) {
-          setFood(data.data.metadata[0]);
-        } else {
-          throw new Error('No detailed data found');
-        }
-      } catch (err) {
-        setError('Failed to load detailed information');
-        console.error(err);
-      } finally {
-        setIsLoading(false);
+    try {
+      // Get the food data from URL search params
+      const foodData = searchParams.get('data')
+      if (foodData) {
+        const parsedFood = JSON.parse(decodeURIComponent(foodData))
+        setFood(parsedFood)
+      } else {
+        throw new Error('No food data provided')
       }
-    };
-
-    if (params.id) {
-      fetchFoodDetails();
+    } catch (err) {
+      setError('Failed to load food information')
+      console.error(err)
+    } finally {
+      setIsLoading(false)
     }
-  }, [params.id]);
+  }, [searchParams])
 
   if (isLoading) {
     return (
@@ -88,6 +182,10 @@ export default function FoodDetailPage() {
     );
   }
 
+  const getNutrientValue = (key: string) => {
+    return food.nutrients[key]?.quantity || 0;
+  };
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 py-12">
       <div className="max-w-4xl mx-auto px-4">
@@ -96,90 +194,84 @@ export default function FoodDetailPage() {
         </Link>
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm dark:shadow-gray-800/30 border border-gray-100 dark:border-gray-700 p-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Left Column - Basic Info */}
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{food.name}</h1>
+          {/* Header Section */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{food.label}</h1>
+            <div className="flex flex-wrap justify-center gap-4 text-gray-600 dark:text-gray-300">
               {food.brand && (
-                <p className="text-gray-600 dark:text-gray-300 mb-2">Brand: {food.brand}</p>
+                <span className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  {food.brand}
+                </span>
               )}
-              {food.categories && (
-                <p className="text-gray-600 dark:text-gray-300 mb-4">Category: {food.categories}</p>
+              {food.category && (
+                <span className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                  </svg>
+                  {food.category}
+                </span>
               )}
-              
-              <div className="aspect-video relative bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden mb-6">
-                <Image
-                  src="/images/food-placeholder.png"
-                  alt={food.name}
-                  fill
-                  className="object-cover dark:brightness-90"
-                />
-              </div>
+              <span className="flex items-center">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {food.servingSizes[0]?.quantity}g per serving
+              </span>
+            </div>
+          </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4">
-                  <p className="text-sm text-gray-600 dark:text-gray-300">Energy</p>
-                  <p className="text-xl font-bold text-gray-900 dark:text-white">
-                    {Number(food['energy-kcal_100g'] || 0).toFixed(2)} kcal
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {Number(food.energy_100g || 0).toFixed(2)} kJ
-                  </p>
-                </div>
-                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
-                  <p className="text-sm text-gray-600 dark:text-gray-300">Protein</p>
-                  <p className="text-xl font-bold text-gray-900 dark:text-white">{Number(food.proteins_100g || 0).toFixed(2)}g</p>
-                </div>
-                <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4">
-                  <p className="text-sm text-gray-600 dark:text-gray-300">Carbs</p>
-                  <p className="text-xl font-bold text-gray-900 dark:text-white">{Number(food.carbohydrates_100g || 0).toFixed(2)}g</p>
-                </div>
-                <div className="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
-                  <p className="text-sm text-gray-600 dark:text-gray-300">Fat</p>
-                  <p className="text-xl font-bold text-gray-900 dark:text-white">{Number(food.fat_100g || 0).toFixed(2)}g</p>
-                </div>
-              </div>
+          {/* Image and Nutrition Label Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {/* Image Section */}
+            <div className="relative h-[400px] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700">
+              <Image
+                src="/images/food-placeholder.png"
+                alt={food.label}
+                fill
+                className="object-cover dark:brightness-90"
+              />
             </div>
 
-            {/* Right Column - Detailed Nutrition */}
-            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Nutrition Facts</h2>
-              <div className="space-y-4">
-                <NutrientRow 
-                  label="Energy" 
-                  value={food['energy-kcal_100g']} 
-                  unit="kcal" 
-                  secondaryValue={food.energy_100g}
-                  secondaryUnit="kJ"
-                />
-                <NutrientRow label="Total Fat" value={food.fat_100g} unit="g" />
-                <NutrientRow label="Saturated Fat" value={food.saturated_fat_100g} unit="g" />
-                <NutrientRow label="Cholesterol" value={food.cholesterol_100g} unit="g" />
-                <NutrientRow label="Sodium" value={food.sodium_100g} unit="g" />
-                <NutrientRow label="Total Carbohydrates" value={food.carbohydrates_100g} unit="g" />
-                <NutrientRow label="Dietary Fiber" value={food.fiber_100g} unit="g" />
-                <NutrientRow label="Sugars" value={food.sugars_100g} unit="g" />
-                <NutrientRow label="Protein" value={food.proteins_100g} unit="g" />
-                <NutrientRow label="Calcium" value={food.calcium_100g} unit="g" />
-                <NutrientRow label="Iron" value={food.iron_100g} unit="g" />
-                <NutrientRow label="Potassium" value={food.potassium_100g} unit="g" />
-                <NutrientRow label="Vitamin A" value={food.vitamin_a_100g} unit="g" />
-                <NutrientRow label="Vitamin C" value={food.vitamin_c_100g} unit="g" />
-                <NutrientRow label="Vitamin D" value={food.vitamin_d_100g} unit="g" />
-              </div>
+            {/* Nutrition Label */}
+            <div className="flex items-center justify-center">
+              <NutritionLabel food={food} />
+            </div>
+          </div>
 
-              <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-600">
-                <p className="text-sm text-gray-500 dark:text-gray-400">Bar Code: {food.bar_code}</p>
-                {food.info_url && (
-                  <a 
-                    href={food.info_url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-sm text-primary-600 dark:text-primary-800 hover:text-primary-700 dark:hover:text-primary-300 mt-2 block"
-                  >
-                    View on Open Food Facts →
-                  </a>
-                )}
+          {/* App CTA Section */}
+          <div className="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 rounded-xl p-8 text-white">
+            <div className="max-w-2xl mx-auto text-center">
+              <h3 className="text-2xl font-bold mb-4">Track Your Nutrition with CaloSync</h3>
+              <p className="text-lg text-white/90 mb-4">
+                Get personalized meal planning, detailed nutrition tracking, and expert recommendations to achieve your health goals.
+              </p>
+              <div className="bg-white/10 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold mb-2">In the app, you'll get:</h4>
+                <ul className="text-sm text-white/90 space-y-1">
+                  <li>• Detailed breakdown of vitamins and minerals</li>
+                  <li>• Complete micronutrient tracking</li>
+                  <li>• Daily nutrient goals and recommendations</li>
+                  <li>• Personalized nutrition insights</li>
+                </ul>
+              </div>
+              <div className="flex justify-center">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.app.caloriecounter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Image
+                    src="/images/google-play-badge.png"
+                    alt="Get it on Google Play"
+                    width={240}
+                    height={72}
+                    className="hover:opacity-90 transition-opacity"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -192,27 +284,16 @@ export default function FoodDetailPage() {
 const NutrientRow = ({ 
   label, 
   value, 
-  unit, 
-  secondaryValue, 
-  secondaryUnit 
+  unit
 }: { 
   label: string; 
-  value: number | null; 
+  value: number; 
   unit: string;
-  secondaryValue?: number | null;
-  secondaryUnit?: string;
 }) => (
   <div className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600 last:border-0">
     <span className="text-gray-600 dark:text-gray-300">{label}</span>
-    <div className="text-right">
-      <span className="font-medium text-gray-900 dark:text-white">
-        {value ? `${Number(value).toFixed(2)}${unit}` : 'N/A'}
-      </span>
-      {secondaryValue && secondaryUnit && (
-        <span className="text-gray-500 dark:text-gray-400 text-sm block">
-          {Number(secondaryValue).toFixed(2)}{secondaryUnit}
-        </span>
-      )}
-    </div>
+    <span className="font-medium text-gray-900 dark:text-white">
+      {value ? `${Number(value).toFixed(2)}${unit}` : 'N/A'}
+    </span>
   </div>
 ); 

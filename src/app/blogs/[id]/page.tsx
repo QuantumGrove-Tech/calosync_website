@@ -2,81 +2,87 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
-// Sample blog post data
-const blogPosts = {
-  1: {
-    title: '10 Science-Backed Ways to Boost Your Metabolism Naturally',
-    category: 'Weight Loss',
-    author: {
-      name: 'Dr. Sarah Wilson',
-      role: 'Nutrition Expert',
-      avatar: '/images/app-mockup.png',
-      bio: 'Dr. Sarah Wilson is a certified nutritionist with over 10 years of experience in metabolic health.'
-    },
-    date: 'Mar 15, 2024',
-    readTime: '5 min read',
-    image: '/images/app-mockup.png',
-    content: [
-      {
-        type: 'paragraph',
-        content: 'Understanding your metabolism is the first step to optimizing it. Your metabolic rate determines how quickly your body converts food into energy, and while some factors like genetics play a role, there are several evidence-based strategies you can use to give it a natural boost.'
-      },
-      {
-        type: 'heading',
-        content: '1. Build and Maintain Muscle Mass'
-      },
-      {
-        type: 'paragraph',
-        content: 'Muscle tissue is metabolically active, meaning it burns more calories at rest than fat tissue. Regular strength training can help you build and maintain muscle mass, leading to a higher resting metabolic rate.'
-      },
-      {
-        type: 'tip',
-        content: 'Pro Tip: Aim for at least 2-3 strength training sessions per week, focusing on compound exercises that work multiple muscle groups.'
-      },
-      {
-        type: 'heading',
-        content: '2. Stay Hydrated'
-      },
-      {
-        type: 'paragraph',
-        content: 'Water is essential for all metabolic processes. Studies show that drinking water can temporarily boost metabolism by 24-30% for an hour after consumption.'
-      },
-      {
-        type: 'heading',
-        content: '3. Eat Protein-Rich Foods'
-      },
-      {
-        type: 'paragraph',
-        content: 'Protein has a higher thermic effect compared to carbs and fats, meaning your body burns more calories digesting it. Including protein in every meal can help boost your metabolism.'
-      }
-    ],
-    tags: ['Metabolism', 'Weight Loss', 'Nutrition', 'Health Tips', 'Fitness'],
-    relatedPosts: [2, 3, 4]
-  }
-  // Add more blog posts as needed
+// Define type for blog post
+type BlogPost = {
+  heading: string;
+  image_url: string;
+  title: string;
+  content: string;
 }
 
 const BlogPost = () => {
   const params = useParams()
   const postId = Number(params.id)
-  const post = blogPosts[postId as keyof typeof blogPosts]
+  
+  const [post, setPost] = useState<BlogPost | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  if (!post) {
+  useEffect(() => {
+    const fetchBlogPost = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch('https://api.quantumgrove.tech:8002/getBlogs')
+        if (!response.ok) {
+          throw new Error('Failed to fetch blog post')
+        }
+        const data = await response.json()
+        
+        // Since the blogs don't have IDs in the API, we'll use the array index
+        if (data.length > postId) {
+          setPost(data[postId])
+        } else {
+          setError('Blog post not found')
+        }
+        
+        setLoading(false)
+      } catch (err) {
+        console.error('Error fetching blog post:', err)
+        setError('Failed to load blog post. Please try again later.')
+        setLoading(false)
+      }
+    }
+
+    fetchBlogPost()
+  }, [postId])
+
+  if (loading) {
     return (
       <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
-        <p className="text-gray-600 dark:text-gray-400">Blog post not found</p>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500"></div>
       </div>
     )
   }
+
+  if (error || !post) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-600 dark:text-gray-400 mb-4">{error || 'Blog post not found'}</p>
+          <Link
+            href="/blogs"
+            className="text-primary-600 dark:text-primary-400 hover:underline"
+          >
+            Back to Blog
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  // Get category from heading
+  const category = getCategoryFromHeading(post.heading)
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <div className="relative h-[60vh] bg-gray-900">
         <Image
-          src={post.image}
+          src={post.image_url}
           alt={post.title}
           fill
           className="object-cover opacity-50 dark:brightness-75"
@@ -89,31 +95,17 @@ const BlogPost = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-primary-400 font-medium mb-4">{post.category}</p>
+              <p className="text-primary-400 font-medium mb-4">{category}</p>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">{post.title}</h1>
-              <div className="flex items-center justify-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                    <Image
-                      src={post.author.avatar}
-                      alt={post.author.name}
-                      fill
-                      className="object-cover dark:brightness-90"
-                    />
-                  </div>
-                  <span>{post.author.name}</span>
-                </div>
-                <span>•</span>
-                <span>{post.date}</span>
-                <span>•</span>
-                <span>{post.readTime}</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <span className="text-gray-200">{post.heading}</span>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
 
-      <div className="w-[70%] mx-auto py-16">
+      <div className="w-[90%] sm:w-[80%] lg:w-[70%] mx-auto py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <motion.div
@@ -123,44 +115,20 @@ const BlogPost = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <article className="prose prose-lg dark:prose-invert max-w-none">
-              {post.content.map((section, index) => {
-                switch (section.type) {
-                  case 'heading':
-                    return (
-                      <h2 key={index} className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
-                        {section.content}
-                      </h2>
-                    )
-                  case 'paragraph':
-                    return (
-                      <p key={index} className="text-gray-600 dark:text-gray-300 mb-6">
-                        {section.content}
-                      </p>
-                    )
-                  case 'tip':
-                    return (
-                      <div key={index} className="bg-primary-50 dark:bg-primary-900/20 border-l-4 border-primary-500 dark:border-primary-400 p-4 my-6">
-                        <p className="text-gray-700 dark:text-gray-300">
-                          {section.content}
-                        </p>
-                      </div>
-                    )
-                  default:
-                    return null
-                }
-              })}
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </article>
 
             {/* Tags */}
             <div className="mt-8 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-sm"
-                >
-                  {tag}
-                </span>
-              ))}
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-sm">
+                {category}
+              </span>
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-sm">
+                Nutrition
+              </span>
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-sm">
+                Wellness
+              </span>
             </div>
           </motion.div>
 
@@ -171,27 +139,48 @@ const BlogPost = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            {/* Author Bio */}
+            {/* CTA */}
+            <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 mb-8">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                Try the CaloSync App
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Get personalized meal plans, track your calories, and achieve your fitness goals with our AI-powered app.
+              </p>
+              <button
+                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.app.caloriecounter', '_blank')}
+                className="w-full px-4 py-2 bg-primary-600 dark:bg-primary-500 text-white font-medium rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
+              >
+                Download Now
+              </button>
+            </div>
+
+            {/* Related Content */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-800/30 p-6 mb-8">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                  <Image
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    fill
-                    className="object-cover dark:brightness-90"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white">{post.author.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">{post.author.role}</p>
-                </div>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300">{post.author.bio}</p>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-4">
+                Explore More
+              </h3>
+              <ul className="space-y-4">
+                <li>
+                  <Link href="/meal-plans" className="text-primary-600 dark:text-primary-400 hover:underline">
+                    Browse All Meal Plans
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blogs" className="text-primary-600 dark:text-primary-400 hover:underline">
+                    Read More Articles
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-primary-600 dark:text-primary-400 hover:underline">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
             </div>
 
             {/* Newsletter */}
-            <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                 Subscribe to Our Newsletter
               </h3>
@@ -202,7 +191,7 @@ const BlogPost = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400"
                 />
                 <button
                   type="submit"
@@ -217,6 +206,16 @@ const BlogPost = () => {
       </div>
     </div>
   )
+}
+
+// Helper function to extract a category from the heading
+function getCategoryFromHeading(heading: string): string {
+  if (heading.includes('Healthy Eating')) return 'Healthy Eating';
+  if (heading.includes('Food Groups')) return 'Food Groups';
+  if (heading.includes('Meal Timing')) return 'Meal Timing';
+  if (heading.includes('Digestive System')) return 'Digestive System';
+  if (heading.includes('Wellness') || heading.includes('Roadmap')) return 'Wellness';
+  return 'Nutrition';
 }
 
 export default BlogPost 

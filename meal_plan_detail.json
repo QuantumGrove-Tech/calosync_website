@@ -1,0 +1,188 @@
+{
+  "diet_plan": "Ketogenic Diet Meal Plan",
+  "id": 1,
+  "diet_type": "Weight Loss",
+  "title": "Introduction to the Ketogenic Diet: Principles and Potential Benefits",
+  "cover_url": "https://api.quantumgrove.tech:8001/calosync/Blog/1.jpeg",
+  "meal_plan": {
+    "days": [
+      {
+        "day": "Monday",
+        "breakfast": "Two eggs fried in butter with sautéed greens",
+        "lunch": "Bunless burger with cheese, mushrooms, and avocado on greens",
+        "dinner": "Pork chops with green beans sautéed in olive oil",
+        "snacks": [
+          "Almonds and cheddar cheese",
+          "Guacamole with low-carb veggies"
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "breakfast": "Mushroom omelet",
+        "lunch": "Tuna salad with celery and tomato on greens",
+        "dinner": "Roast chicken with cream sauce and broccoli",
+        "snacks": [
+          "Half avocado with chicken salad",
+          "Cheese roll-ups"
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "breakfast": "Bell pepper stuffed with cheese and eggs",
+        "lunch": "Arugula salad with eggs, turkey, avocado, and blue cheese",
+        "dinner": "Grilled salmon with spinach in sesame oil",
+        "snacks": [
+          "Keto trail mix",
+          "Celery with cream cheese"
+        ]
+      },
+      {
+        "day": "Thursday",
+        "breakfast": "Full-fat yogurt with Keto granola",
+        "lunch": "Steak bowl with cauliflower rice and avocado",
+        "dinner": "Bison steak with cheesy broccoli",
+        "snacks": [
+          "Hard-boiled eggs",
+          "Macadamia nuts"
+        ]
+      },
+      {
+        "day": "Friday",
+        "breakfast": "Baked avocado egg boats",
+        "lunch": "Caesar salad with chicken",
+        "dinner": "Pork chops with vegetables",
+        "snacks": [
+          "Coconut chips",
+          "Jerky"
+        ]
+      },
+      {
+        "day": "Saturday",
+        "breakfast": "Cauliflower toast with cheese and avocado",
+        "lunch": "Bunless salmon burgers with pesto",
+        "dinner": "Meatballs with zucchini noodles",
+        "snacks": [
+          "Kale chips",
+          "Olives and salami"
+        ]
+      },
+      {
+        "day": "Sunday",
+        "breakfast": "Coconut milk chia pudding",
+        "lunch": "Cobb salad with turkey and avocado",
+        "dinner": "Coconut chicken curry",
+        "snacks": [
+          "Berries with whipped cream",
+          "Parmesan crisps"
+        ]
+      }
+    ]
+  },
+  "foods_allowed": {
+    "meats": [
+      "Beef",
+      "Pork",
+      "Lamb",
+      "Poultry"
+    ],
+    "fish": [
+      "Salmon",
+      "Mackerel",
+      "Sardines"
+    ],
+    "eggs": [
+      "Pastured/organic"
+    ],
+    "dairy": [
+      "Full-fat yogurt",
+      "Butter",
+      "Hard cheeses"
+    ],
+    "fats": [
+      "Olive oil",
+      "Avocado oil",
+      "Coconut oil"
+    ],
+    "vegetables": [
+      "Leafy greens",
+      "Broccoli",
+      "Cauliflower",
+      "Peppers"
+    ],
+    "nuts_seeds": [
+      "Almonds",
+      "Walnuts",
+      "Macadamia",
+      "Flaxseeds"
+    ],
+    "other": [
+      "Avocados",
+      "Low-carb sweeteners"
+    ]
+  },
+  "foods_restricted": {
+    "grains": [
+      "Wheat",
+      "Rice",
+      "Oats",
+      "Corn"
+    ],
+    "sugars": [
+      "Soda",
+      "Juice",
+      "Candy",
+      "Pastries"
+    ],
+    "fruits": [
+      "All except small berry portions"
+    ],
+    "vegetables": [
+      "Potatoes",
+      "Sweet potatoes",
+      "Corn"
+    ],
+    "legumes": [
+      "Beans",
+      "Lentils",
+      "Chickpeas"
+    ],
+    "processed": [
+      "Low-fat diet products",
+      "Trans fats"
+    ]
+  },
+  "macronutrient_breakdown": {
+    "fat": "70-80%",
+    "protein": "10-20%",
+    "carbohydrates": "5-10%",
+    "net_carbs_definition": "Total carbs minus fiber and sugar alcohols"
+  },
+  "considerations": {
+    "duration": "Typically short-term (weeks to months)",
+    "risks": [
+      "Nutrient deficiencies (vitamins/minerals)",
+      "Constipation from low fiber",
+      "Increased kidney stone risk",
+      "Potential cholesterol impacts"
+    ],
+    "precautions": [
+      "Medical consultation required before starting",
+      "Not recommended for those with pancreatic, liver, or thyroid conditions",
+      "Monitoring recommended for diabetics"
+    ]
+  },
+  "intro": "The ketogenic diet is characterized by a significant reduction in carbohydrate intake, coupled with moderate protein consumption and a high intake of fats. This dietary shift compels the body to enter a metabolic state known as ketosis 1. The fundamental principle behind this diet is to alter the body's primary fuel source from glucose, derived from carbohydrates, to ketones, which are produced from the breakdown of fats in the liver 1. This metabolic transition typically occurs when carbohydrate consumption is limited to less than 50 grams per day 1. The reduction in carbohydrate intake leads to decreased insulin secretion, which in turn encourages the body to first utilize its stored glycogen. Once these glycogen reserves are depleted, the body begins to break down fat for energy, leading to the production of ketones 1.The distribution of macronutrients in a ketogenic diet typically falls within the range of 70-80% of daily calories from fat, 10-20% from protein, and 5-10% from carbohydrates 1. It is important to note that while this represents a general guideline, variations of the ketogenic diet exist, such as the high-protein ketogenic diet, which may have slightly different macronutrient ratios 7. This suggests that the \"standard\" ketogenic diet is not rigidly defined and can be adapted to some extent based on individual needs and goals 5.The ketogenic diet has gained popularity due to its potential benefits, which include weight loss, improved blood sugar control, and possible neurological benefits 1. The initial weight loss observed on a ketogenic diet is often rapid, partly due to the loss of water weight and the appetite-suppressing effects of the high fat intake and the presence of ketones 4. The high fat content of the diet promotes satiety, and the reduced carbohydrate intake can lead to lower insulin levels, which may further enhance fat burning 3. Historically, the ketogenic diet has also been used in the treatment of epilepsy, highlighting its potential therapeutic applications under medical supervision",
+  "short_description": "A ketogenic diet is a low-carb, high-fat eating plan that shifts the body into ketosis, promoting fat-burning for energy. It may aid in weight loss, blood sugar control, and neurological health.",
+  "tags": [
+    "Keto Diet",
+    "Weight Loss",
+    "Low-Carb",
+    "Healthy Lifestyle",
+    "Fat Loss",
+    "High-Fat Diet",
+    "Sugar-Free",
+    "Metabolic Health",
+    "Ketosis",
+    "Carb Restriction"
+  ]
+}
